@@ -127,7 +127,7 @@ public class Person {
 
 
 	public int getStationNumber() {
-		return stationNumbe	r;
+		return stationNumber;
 	}
 
 
@@ -148,4 +148,3 @@ public class Person {
 	
 	
 }
-
