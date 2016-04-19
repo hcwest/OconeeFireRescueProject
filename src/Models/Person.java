@@ -1,7 +1,4 @@
-package Models;
-
-public class Person {
-  package model;
+package model;
 
 public class Person {
 
@@ -150,6 +147,4 @@ public class Person {
 	
 	
 	
-}
-
 }
