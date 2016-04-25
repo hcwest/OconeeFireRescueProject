@@ -11,20 +11,21 @@
 	
 	<img src="https://scontent-atl3-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10486466_288435341342261_4579019031222629554_n.jpg?oh=eb949ac5c8427ffcb5fbf0826047abeb&oe=57AE41A8">
 	<br />
-	<form name=loginForm action=login method=get >
+	<form name=loginForm action=login method=post >
 	
 	Username
 	<br />
-	<input type=text name="user" value="" />
+	<input type="text" name="email" placeholder="Email" required><br>
 	<br />
 	Password
 	<br />
-	<input type=text name="pwd" value="" />
+	<input type="password" name="password" placeholder ="Password" required><br>
 	<br />
 	<a href="" >Create An Account</a>
 	<a href="" >Forgot My Password</a>
 	<br />
 	<input type=submit name "btn_Login" value="Login">
+	${errorMessage}
 	</form>
 	
 </body>
