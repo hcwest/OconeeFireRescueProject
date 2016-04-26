@@ -75,7 +75,7 @@ public class UpdatePersonServlet extends HttpServlet {
 		UpdateQuery uq = new UpdateQuery("ofr_model", "root", "password");
 		uq.doUpdatePerson(person);
 		
-		// pass control on to the ReadServlet
+		// pass control on to the ReadServletn
 		String url = "/read";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
