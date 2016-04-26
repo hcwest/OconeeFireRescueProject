@@ -14,7 +14,7 @@ import model.PersonCertifications;
 /**
  * Servlet implementation class AddPersonCertificationServlet
  */
-@WebServlet("/AddPersonCertificationServlet")
+@WebServlet("/addPersonCertification")
 public class AddPersonCertificationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,7 +39,7 @@ public class AddPersonCertificationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
+		String radioNumber = request.getParameter("radioNumber");
 		String certificationName = request.getParameter("certificationName");
 		
 		// set up a certifications object
@@ -48,13 +48,13 @@ public class AddPersonCertificationServlet extends HttpServlet {
 	    personCertification.setCertificationName(certificationName);
 	    
 		// set up an addQuery object
-	    AddQuery aq = new AddQuery("person", "root", "0000");
+	    AddQuery aq = new AddQuery("ofr_model", "root", "password");
 	    
 		// pass the product to addQuery to add to the database
 	    aq.doAddPersonCertifications(personCertification);
 	    
 		// pass execution control to the ReadServlet
-	    String url = "/read";
+	    String url = "/readPersonHasCert";
 	    
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 	    dispatcher.forward(request, response);
