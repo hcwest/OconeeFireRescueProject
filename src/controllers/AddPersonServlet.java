@@ -72,7 +72,7 @@ public class AddPersonServlet extends HttpServlet {
 	    aq.doAddPerson(person);
 	    
 		// pass execution control to the ReadServlet
-	    String url = "/read";
+	    String url = "/readPerson";
 	    
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 	    dispatcher.forward(request, response);
