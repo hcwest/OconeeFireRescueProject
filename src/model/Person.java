@@ -2,7 +2,7 @@ package model;
 
 public class Person {
 
-	public String radioNumber; //pk
+	public int radioNumber; //pk
 	public String firstName;
 	public String lastName;
 	public String position;
@@ -12,7 +12,7 @@ public class Person {
 	public String workPhone;
 	public String mobilePhone;
 	public int stationNumber;
-	public boolean isActive;
+	public String isActive;
 	public String email;
 	
 	public Person() {
@@ -21,7 +21,7 @@ public class Person {
 	}
 
 
-	public Person(String radioNumber, String firstName, String lastName, String position, String gender, String dateOfBirth, String address, String workPhone, String mobilePhone, int stationNumber, boolean isActive, String email) {
+	public Person(int radioNumber, String firstName, String lastName, String position, String gender, String dateOfBirth, String address, String workPhone, String mobilePhone, int stationNumber, String isActive, String email) {
 		this.radioNumber = radioNumber;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -37,12 +37,12 @@ public class Person {
 	}
 
 
-	public String getRadioNumber() {
+	public int getRadioNumber() {
 		return radioNumber;
 	}
 
 
-	public void setRadioNumber(String radioNumber) {
+	public void setRadioNumber(int radioNumber) {
 		this.radioNumber = radioNumber;
 	}
 
@@ -137,12 +137,12 @@ public class Person {
 	}
 
 
-	public boolean isActive() {
+	public String getActive() {
 		return isActive;
 	}
 
 
-	public void setActive(boolean isActive) {
+	public void setActive(String isActive) {
 		this.isActive = isActive;
 	}
 	

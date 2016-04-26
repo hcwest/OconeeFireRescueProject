@@ -1,7 +1,7 @@
 package model;
 
 public class PersonCertifications {
-	private String radioNumber;
+	private int radioNumber;
 	private String certificationName;
 	private Boolean isExpired;
 	private String earnedDate;
@@ -12,7 +12,7 @@ public class PersonCertifications {
 		
 	}
 	
-	public PersonCertifications(String radioNumber, String certificationName, Boolean isExpired, String earnedDate,
+	public PersonCertifications(int radioNumber, String certificationName, Boolean isExpired, String earnedDate,
 			String renewalDate) {
 	this.radioNumber = radioNumber;
 	this.certificationName = certificationName;
@@ -21,11 +21,11 @@ public class PersonCertifications {
 	this.renewalDate = renewalDate;
 	}
 
-	public String getRadioNumber() {
+	public int getRadioNumber() {
 		return radioNumber;
 	}
 
-	public void setRadioNumber(String radioNumber) {
+	public void setRadioNumber(int radioNumber) {
 		this.radioNumber = radioNumber;
 	}
 
