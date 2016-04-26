@@ -82,7 +82,7 @@ public class ReadQuery {
 		try {
 			while(this.results.next()){
 				Person person = new Person();
-				person.setRadioNumber(this.results.getString("radioNumber"));
+				person.setRadioNumber(this.results.getInt("radioNumber"));
 				person.setFirstName(this.results.getString("firstName"));
 				person.setLastName(this.results.getString("lastName"));
 				person.setPosition(this.results.getString("position"));
@@ -92,7 +92,7 @@ public class ReadQuery {
 				person.setWorkPhone(this.results.getString("workPhone"));
 				person.setMobilePhone(this.results.getString("mobilePhone"));
 				person.setStationNumber(this.results.getInt("stationNumber"));
-				person.setActive(this.results.getBoolean("isActive"));
+				person.setActive(this.results.getString("isActive"));
 				
 				
 
@@ -149,7 +149,7 @@ public class ReadQuery {
 		try {
 			while(this.results.next()){
 				PersonCertifications personCertification = new PersonCertifications();
-				personCertification.setRadioNumber(this.results.getString("radioNumber"));
+				personCertification.setRadioNumber(this.results.getInt("radioNumber"));
 				personCertification.setCertificationName(this.results.getString("certificationName"));
 				personCertification.setIsExpired(this.results.getBoolean("isExpired"));
 				personCertification.setEarnedDate(this.results.getString("earnedDate"));

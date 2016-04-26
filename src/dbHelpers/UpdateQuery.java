@@ -52,9 +52,9 @@ public class UpdateQuery {
 			ps.setString(7, person.getWorkPhone());
 			ps.setString(8, person.getMobilePhone());
 			ps.setInt(9, person.getStationNumber());
-			ps.setBoolean(10, person.isActive());
+			ps.setString(10, person.getActive());
 			ps.setString(11, person.getEmail());
-			ps.setString(12, person.getRadioNumber());
+			ps.setInt(12, person.getRadioNumber());
 			
 			
 			
@@ -79,7 +79,7 @@ public class UpdateQuery {
 			ps.setBoolean(2, personCertification.getIsExpired());
 			ps.setString(3, personCertification.getEarnedDate());
 			ps.setString(4, personCertification.getRenewalDate());
-			ps.setString(5, personCertification.getRadioNumber());
+			ps.setInt(5, personCertification.getRadioNumber());
 			
 			
 			
