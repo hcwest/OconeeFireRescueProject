@@ -15,7 +15,7 @@ import model.Certifications;
 /**
  * Servlet implementation class AddServlet
  */
-@WebServlet(description = "Controller for adding a new product to the database", urlPatterns = { "/addPerson" })
+@WebServlet(description = "Controller for adding a new product to the database", urlPatterns = { "/addCertification" })
 public class AddCertificationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,7 +50,7 @@ public class AddCertificationServlet extends HttpServlet {
 	    certification.setCertifyingAgency(certifyingAgency);
 	    
 		// set up an addQuery object
-	    AddQuery aq = new AddQuery("person", "root", "0000");
+	    AddQuery aq = new AddQuery("ofr_model", "root", "password");
 	    
 		// pass the product to addQuery to add to the database
 	    aq.doAddCertification(certification);
