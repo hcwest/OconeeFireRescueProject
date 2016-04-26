@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import model.Person;
+import model.Certifications;
+import model.PersonCertifications;
 
 public class AddQuery {
 	
@@ -28,12 +30,12 @@ public class AddQuery {
 	}
 	
 	//*****************************************************************************************************************
-	public void doAdd(Person person){
+	public void doAddPerson(Person person){
 		String query = "insert into Person (radioNumber, firstName, lastName, position, gender, dateOfBirth, address, workPhone, mobilePhone, stationNumber, isActive) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 				
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
-			ps.setString(1, person.getRadioNumber());
+			ps.setInt(1, person.getRadioNumber());
 			ps.setString(2, person.getFirstName());
 			ps.setString(3, person.getLastName());
 			ps.setString(4, person.getPosition());
@@ -54,4 +56,39 @@ public class AddQuery {
 		
 	}
 
+	public void doAddCertification(Certifications certification){
+		String query = "insert into Certifications (certificationName, expirationPeriod, certifyingAgency) values (?, ?, ?)";
+				
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setString(1, certification.getCertificationName());
+			ps.setInt(2, certification.getExpirationPeriod());
+			ps.setString(3, certification.getCertifyingAgency());
+			
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void doAddPersonCertifications(PersonCertifications personCertifications){
+		String query = "insert into Person_has_Certifications (radioNumber, certificationName) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+				
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, personCertifications.getRadioNumber());
+			ps.setString(2, personCertifications.getCertificationName());
+			
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	
 }
