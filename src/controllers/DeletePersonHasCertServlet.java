@@ -14,7 +14,7 @@ import dbHelpers.DeleteQuery;
 /**
  * Servlet implementation class DeleteServlet
  */
-@WebServlet(description = "Deletes a record for a particular certification that a person has", urlPatterns = { "/delete" })
+@WebServlet(description = "Deletes a record for a particular certification that a person has", urlPatterns = { "/deletePersonHasCert" })
 public class DeletePersonHasCertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -48,7 +48,7 @@ public class DeletePersonHasCertServlet extends HttpServlet {
 		dq.doDeletePersonHasCert(radioNumber, certificationName);
 		
 		// pass execution on to the ReadServlet
-		String url = "/read";
+		String url = "/readPersonHasCert";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
