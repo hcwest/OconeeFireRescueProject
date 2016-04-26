@@ -56,7 +56,7 @@ public class AddCertificationServlet extends HttpServlet {
 	    aq.doAddCertification(certification);
 	    
 		// pass execution control to the ReadServlet
-	    String url = "/read";
+	    String url = "/readCert";
 	    
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 	    dispatcher.forward(request, response);
