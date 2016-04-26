@@ -77,11 +77,28 @@ public class DeleteQuery {
 		}
 		
 		
+	}
+
+	public void doDeleteCertification(String certificationName){
+		// set up a String to hold our query
+		String query = "delete from certifications where certificationName = ?";
 		
-		
+		// create a preparedstatement using our query string
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			
+			// fill in the preparedstatement
+			ps.setString(1, certificationName);
+			
+			// execute the query
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
-
 }
 
