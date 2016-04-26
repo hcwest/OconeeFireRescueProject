@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AddFormServlet
  */
-@WebServlet(description = "Controller to generate form to add a new member", urlPatterns = { "/addForm" })
+@WebServlet(description = "Controller to generate form to add a new member", urlPatterns = { "/addPersonForm" })
 public class AddPersonFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
