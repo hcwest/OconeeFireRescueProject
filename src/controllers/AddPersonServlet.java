@@ -49,7 +49,7 @@ public class AddPersonServlet extends HttpServlet {
 		String workPhone= request.getParameter("workPhone");
 		String mobilePhone= request.getParameter("mobilePhone");
 		int stationNumber= Integer.parseInt(request.getParameter("stationNumber"));
-		boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
+		String isActive = request.getParameter("isActive");
 	    
 		// set up a person object
 	    Person person = new Person();
@@ -66,7 +66,7 @@ public class AddPersonServlet extends HttpServlet {
 		person.setActive(isActive);
 	    
 		// set up an addQuery object
-	    AddQuery aq = new AddQuery("person", "root", "0000");
+	    AddQuery aq = new AddQuery("ofr_model", "root", "0000");
 	    
 		// pass the product to addQuery to add to the database
 	    aq.doAddPerson(person);

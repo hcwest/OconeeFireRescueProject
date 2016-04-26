@@ -40,7 +40,7 @@ public class UpdatePersonServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the form data and set up a Book object
 		
-		String radioNumber = request.getParameter("radioNumber");
+		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String position = request.getParameter("position");
@@ -50,7 +50,7 @@ public class UpdatePersonServlet extends HttpServlet {
 		String workPhone = request.getParameter("workPhone");
 		String mobilePhone = request.getParameter("mobilePhone");
 		int stationNumber = Integer.parseInt(request.getParameter("stationNumber"));
-		boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
+		String isActive = request.getParameter("isActive");
 		String email = request.getParameter("email");
 		
 		

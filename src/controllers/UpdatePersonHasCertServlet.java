@@ -40,7 +40,7 @@ public class UpdatePersonHasCertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the form data and set up a personhascertification object
 		
-		String radioNumber = request.getParameter("radioNumber");
+		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 		String certificationName = request.getParameter("certificationName");
 		Boolean isExpired = Boolean.parseBoolean(request.getParameter("isExpired"));
 		String earnedDate = request.getParameter("earnedDate");
