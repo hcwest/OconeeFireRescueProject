@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<%
-	//get table from servlet
-    String table = (String) request.getAttribute("table");
-%>      
+<%@ page import="model.*" %>   
+    
+<% PersonCertifications personCertification = (PersonCertifications) request.getAttribute("personCertification"); %>    
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,31 +26,31 @@
 	<label>
       Radio Number:
    </label>
-   <input type=text name=radioNumber value="<%= personsCertifications.getRadioNumber() %>" />
+   <input type=text name=radioNumber value="<%= personCertification.getRadioNumber() %>" />
    <br />
    
     <label>
       Certification Name:
    </label>
-   <input type=text name=certificationName value="<%= personsCertifications.getCertificationName() %>" />
+   <input type=text name=certificationName value="<%= personCertification.getCertificationName() %>" />
    <br />
 
    <label>
       Is Expired:
    </label>
-   <input type=text name=isExpired value="<%= personsCertifications.getIsExpired() %>" />
+   <input type=text name=isExpired value="<%= personCertification.getIsExpired() %>" />
    <br />
    
    <label>
       Earned Date:
    </label>
-   <input type=text name=earnedDate value="<%= personsCertifications.getEarnedDate() %>" />
+   <input type=text name=earnedDate value="<%= personCertification.getEarnedDate() %>" />
    <br />
    
    <label>
       Renewed Date:
    </label>
-   <input type=text name=renewedDate value="<%= personsCertifications.getRenewedDate() %>" />
+   <input type=text name=renewalDate value="<%= personCertification.getRenewalDate() %>" />
    <br />
 
    

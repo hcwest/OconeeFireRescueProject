@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<%@ page import="model.*" %>   
     
-<%
-	//get table from servlet
-    String table = (String) request.getAttribute("table");
-%>      
-    
+<% Person person = (Person) request.getAttribute("person"); %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,7 +20,7 @@
 	<a href="reports.jsp">Reports [don't click because it makes the server sad]</a>
 	<br />
 
-<form name=editMembers action=editMembers method=get >
+<form name=editMembers action=UpdatePersonFormServlet method=get >
 
 
 	<label>
@@ -79,7 +78,7 @@
    <label>
       Active:
    </label>
-   <input type=text name=active value="<%= person.getActive() %>" />
+   <input type=text name=isActive value="<%= person.getActive() %>" />
    <br />
    
    <input type=submit name=submit value="Update the Member" />
