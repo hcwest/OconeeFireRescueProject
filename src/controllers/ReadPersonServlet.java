@@ -17,8 +17,8 @@ import dbHelpers.ReadQuery;
 @WebServlet(
 		description = "Controller for reading the Person table", 
 		urlPatterns = { 
-				"/ReadPersonServlet", 
-				"/read"
+				"/ReadPerson", 
+				
 		})
 public class ReadPersonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
