@@ -39,7 +39,7 @@ public class AddPersonCertificationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String radioNumber = request.getParameter("radioNumber");
+		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 		String certificationName = request.getParameter("certificationName");
 		
 		// set up a certifications object
