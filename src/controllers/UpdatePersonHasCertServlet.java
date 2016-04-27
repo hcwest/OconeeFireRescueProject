@@ -15,7 +15,7 @@ import dbHelpers.UpdateQuery;
 /**
  * Servlet implementation class UpdateBookServlet
  */
-@WebServlet(description = "Controller which starts the actual personhascertification update to the database", urlPatterns = { "/updateBook" })
+@WebServlet(description = "Controller which starts the actual personhascertification update to the database", urlPatterns = { "/updatePersonHasCert" })
 public class UpdatePersonHasCertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -42,7 +42,7 @@ public class UpdatePersonHasCertServlet extends HttpServlet {
 		
 		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 		String certificationName = request.getParameter("certificationName");
-		Boolean isExpired = Boolean.parseBoolean(request.getParameter("isExpired"));
+		String isExpired = request.getParameter("isExpired");
 		String earnedDate = request.getParameter("earnedDate");
 		String renewalDate = request.getParameter("renewalDate");
 		
@@ -61,7 +61,7 @@ public class UpdatePersonHasCertServlet extends HttpServlet {
 		uq.doUpdatePersonHasCert(personCertification);
 		
 		// pass control on to the ReadServlet
-		String url = "/read";
+		String url = "/readPersonHasCert";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
