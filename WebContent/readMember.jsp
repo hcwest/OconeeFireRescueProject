@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
     pageEncoding="US-ASCII"%>
   
+ <%
+ 	String personTable = (String) request.getAttribute("personTable");
+ %> 
+  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +21,8 @@
 	<br />
 
 <h1>Member List</h1>
+
+<%= personTable %>
 
 <br />
 <a href="addMember.jsp">Add a Member</a>

@@ -16,7 +16,7 @@
 	<br />
 	
 	
-	<form name=addForm action=addMember method=get>
+	<form name=addForm action=addPerson method=get>
 		<h2>New Member Information:</h2>
 		<br /> Radio Number: <input type=text name="radioNumber" value="" />
 		<br /> First Name: <input type=text name="personFirstName" value="" />
