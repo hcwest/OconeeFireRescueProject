@@ -25,10 +25,10 @@ public class UserHelper {
 		try {
 			//Set up connection
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/securelogin", "root", "");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/ofr_model", "root", "password");
 			
 			//Create the preparedstatement(s)
-			authenticateUserStatement = conn.prepareStatement("select * from user where username=? and password=?");
+			authenticateUserStatement = conn.prepareStatement("select * from user where email=? and password=?");
 		} catch (Exception e) {
 			System.out.println(e.getClass().getName() + ": " + e.getMessage());
 		}
