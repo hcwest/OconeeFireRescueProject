@@ -3,7 +3,7 @@ package model;
 public class PersonCertifications {
 	private int radioNumber;
 	private String certificationName;
-	private Boolean isExpired;
+	private String isExpired;
 	private String earnedDate;
 	private String renewalDate;
 	
@@ -12,7 +12,7 @@ public class PersonCertifications {
 		
 	}
 	
-	public PersonCertifications(int radioNumber, String certificationName, Boolean isExpired, String earnedDate,
+	public PersonCertifications(int radioNumber, String certificationName, String isExpired, String earnedDate,
 			String renewalDate) {
 	this.radioNumber = radioNumber;
 	this.certificationName = certificationName;
@@ -37,11 +37,11 @@ public class PersonCertifications {
 		this.certificationName = certificationName;
 	}
 
-	public Boolean getIsExpired() {
+	public String getIsExpired() {
 		return isExpired;
 	}
 
-	public void setIsExpired(Boolean isExpired) {
+	public void setIsExpired(String isExpired) {
 		this.isExpired = isExpired;
 	}
 
@@ -73,4 +73,3 @@ public class PersonCertifications {
 
 
 }
-
