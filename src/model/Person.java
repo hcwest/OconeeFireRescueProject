@@ -2,7 +2,7 @@ package model;
 
 public class Person {
 
-	public int radioNumber; //pk
+	public int radioNumber; //
 	public String firstName;
 	public String lastName;
 	public String position;
@@ -15,13 +15,14 @@ public class Person {
 	public String isActive;
 	public String email;
 	
+	
 	public Person() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Person(int radioNumber, String firstName, String lastName, String position, String gender, String dateOfBirth, String address, String workPhone, String mobilePhone, int stationNumber, String isActive, String email) {
+	public Person(int radioNumber, String firstName, String lastName, String position, String gender, String dateOfBirth, String address, String workPhone, String mobilePhone, int stationNumber, String isActive) {
 		this.radioNumber = radioNumber;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,7 +34,6 @@ public class Person {
 		this.mobilePhone = mobilePhone;
 		this.stationNumber = stationNumber;
 		this.isActive = isActive;
-		this.email = email;
 	}
 
 
@@ -145,7 +145,8 @@ public class Person {
 	public void setActive(String isActive) {
 		this.isActive = isActive;
 	}
-	
+
+
 	public String getEmail() {
 		return email;
 	}
@@ -154,7 +155,6 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	
 	
 	
