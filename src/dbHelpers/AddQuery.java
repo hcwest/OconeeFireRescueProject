@@ -45,7 +45,7 @@ public class AddQuery {
 			ps.setString(8, person.getWorkPhone());
 			ps.setString(9, person.getMobilePhone());
 			ps.setInt(10, person.getStationNumber());
-			//ps.setBoolean(11, person.isActive());
+			ps.setString(11, person.getActive());
 			
 			ps.executeUpdate();
 			
