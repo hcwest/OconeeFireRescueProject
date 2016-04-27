@@ -151,7 +151,7 @@ public class ReadQuery {
 				PersonCertifications personCertification = new PersonCertifications();
 				personCertification.setRadioNumber(this.results.getInt("radioNumber"));
 				personCertification.setCertificationName(this.results.getString("certificationName"));
-				personCertification.setIsExpired(this.results.getBoolean("isExpired"));
+				personCertification.setIsExpired(this.results.getString("isExpired"));
 				personCertification.setEarnedDate(this.results.getString("earnedDate"));
 				personCertification.setRenewalDate(this.results.getString("renewalDate"));
 				
