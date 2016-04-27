@@ -19,7 +19,7 @@ import utilities.PasswordService;
  * Servlet implementation class LoginController
  * A controller for handling user authentication and login
  */
-@WebServlet(description = "A controller for handling user logins", urlPatterns = { "/Login" })
+@WebServlet(description = "A controller for handling user logins", urlPatterns = { "/login" })
 public class LoginController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -73,7 +73,7 @@ public class LoginController extends HttpServlet {
 			url = "index.jsp";
 		}else{	//proceed
 			//pull the fields from the form
-			String username = request.getParameter("email");
+			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 
 			//encrypt the password to check against what's stored in DB
@@ -82,7 +82,7 @@ public class LoginController extends HttpServlet {
 			
 			//create a user helper class to make database calls, and call authenticate user method
 			UserHelper uh = new UserHelper();
-			User user = uh.authenticateUser(username, encryptedPass);
+			User user = uh.authenticateUser(email, encryptedPass);
 
 			//we've found a user that matches the credentials
 			if(user != null){
@@ -90,7 +90,7 @@ public class LoginController extends HttpServlet {
 				session.invalidate();
 				session=request.getSession(true);
 				session.setAttribute("user", user);
-				url="UserAccount.jsp";
+				url="myProfile.jsp";
 			}
 			// user doesn't exist, redirect to previous page and show error
 			else{
