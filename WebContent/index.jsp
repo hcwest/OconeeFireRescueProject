@@ -15,7 +15,7 @@
 	</div>
 	
 	<div class="login-form">
-		<form name=loginForm action=login method=post >
+		<form name=loginForm action="login" method=post >
 	
 		<h3>Username</h3>
 		<br />
@@ -25,10 +25,9 @@
 		<br />
 		<input type="password" name="password" placeholder ="Password" required><br>
 		<br />
-		<a href="" >Create An Account</a>
-		<a href="" >Forgot My Password</a>
-		<br />
-		<input type="submit" name="btn_Login" value="Login">
+		
+		<input type="submit" name="btn_Login" value="login">
+		
 		</form>
 	</div>
 </div>
