@@ -43,7 +43,7 @@ public class ReadPersonHasCertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Create a ReadQuery helper object
-		ReadQuery rq = new ReadQuery("ofr_model", "root", "password");
+		ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
 		
 		// Get the html table from the REadQuery object
 		rq.doReadPersonHasCert();

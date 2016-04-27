@@ -76,8 +76,8 @@ public class ReadQuery {
 	}
 	
 	public String getPersonTable(){
-		String table ="";
-		table += "<table border=1>";
+		String personTable ="";
+		personTable += "<table border=1>";
 		
 		try {
 			while(this.results.next()){
@@ -96,41 +96,41 @@ public class ReadQuery {
 				
 				
 
-				table +="<tr>";
-				table +="<td>";
-				table += person.getRadioNumber();
-				table +="</td>";
-				table +="<td>";
-				table += person.getFirstName();
-				table +="</td>";
-				table +="<td>";
-				table += person.getLastName();
-				table +="</td>";
-				table +="<td>";
-				table += person.getPosition();
-				table +="</td>";
-				table +="<td>";
-				table += person.getGender();
-				table +="</td>";
-				table +="<td>";
-				table += person.getDateOfBirth();
-				table +="</td>";
-				table +="<td>";
-				table += person.getAddress();
-				table +="</td>";
-				table +="<td>";
-				table += person.getWorkPhone();
-				table +="</td>";
-				table +="<td>";
-				table += person.getMobilePhone();
-				table +="</td>";
-				table +="<td>";
-				table += person.getStationNumber();
-				table +="</td>";
-				table +="<td>";
-				   table += "<a href=update?radioNumber=" + person.getRadioNumber() + " >update</a> <a href=delete?radioNumber=" + person.getRadioNumber() + " >delete</a>";
-				table +="</td>";
-				table +="</tr>";
+				personTable +="<tr>";
+				personTable +="<td>";
+				personTable += person.getRadioNumber();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getFirstName();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getLastName();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getPosition();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getGender();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getDateOfBirth();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getAddress();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getWorkPhone();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getMobilePhone();
+				personTable +="</td>";
+				personTable +="<td>";
+				personTable += person.getStationNumber();
+				personTable +="</td>";
+				personTable +="<td>";
+				   personTable += "<a href=update?radioNumber=" + person.getRadioNumber() + " >update</a> <a href=delete?radioNumber=" + person.getRadioNumber() + " >delete</a>";
+				personTable +="</td>";
+				personTable +="</tr>";
 				
 			}
 		} catch (SQLException e) {
@@ -138,8 +138,8 @@ public class ReadQuery {
 			e.printStackTrace();
 		}
 		
-		table += "</table>";
-		return table;
+		personTable += "</table>";
+		return personTable;
 	}
 	
 	public String getPersonHasCertTable(){
