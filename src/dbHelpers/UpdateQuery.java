@@ -76,7 +76,7 @@ public class UpdateQuery {
 			
 			
 			ps.setString(1, personCertification.getCertificationName());
-			ps.setBoolean(2, personCertification.getIsExpired());
+			ps.setString(2, personCertification.getIsExpired());
 			ps.setString(3, personCertification.getEarnedDate());
 			ps.setString(4, personCertification.getRenewalDate());
 			ps.setInt(5, personCertification.getRadioNumber());
