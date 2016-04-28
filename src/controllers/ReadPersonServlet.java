@@ -17,7 +17,7 @@ import dbHelpers.ReadQuery;
 @WebServlet(
 		description = "Controller for reading the Person table", 
 		urlPatterns = { 
-				"/ReadPerson", 
+				"/readPerson", 
 				
 		})
 public class ReadPersonServlet extends HttpServlet {
@@ -45,17 +45,22 @@ public class ReadPersonServlet extends HttpServlet {
 		// Create a ReadQuery helper object
 		ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
 		
-		// Get the html table from the REadQuery object
+		// Get the html table from the ReadQuery object
 		rq.doReadPerson();
 		String personTable = rq.getPersonTable();
 		
+		//String test = rq.getPersonTable();
+		
 		// pass execution control to read.jsp along with the table
-		request.setAttribute("table", personTable);
+		request.setAttribute("personTable", personTable);
+		
+		//String test = "test";
+		//request.setAttribute("test", test);
+		
 		String url = "/readMember.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 		
 	}
-
 }
