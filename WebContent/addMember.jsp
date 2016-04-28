@@ -7,20 +7,24 @@
 <title>Add a new member</title>
 </head>
 <body>
-	<!-- temporary nav links that will totally not be here in the final build -->
-	<a href="myProfile.jsp">My Profile</a>
+
+	<br/>
+	<br/>
+	<a href="home.jsp">Home</a>
+	<br/>
+	<br/>
+	<a href="memberInfo.jsp">Member Info</a>
+	<br/>
+	<br/>
+	<a href="reports.jsp">Reports</a>
 	<br />
-	<a href="editMembers.jsp">Edit Members</a>
 	<br />
-	<a href="reports.jsp">Reports [don't click because it makes the server sad]</a>
-	<br />
-	
 	
 	<form name=addForm action=addPerson method=get>
 		<h2>New Member Information:</h2>
 		<br /> Radio Number: <input type=text name="radioNumber" value="" />
-		<br /> First Name: <input type=text name="personFirstName" value="" />
-		<br /> Last Name: <input type=text name="personLastName" value="" />
+		<br /> First Name: <input type=text name="firstName" value="" />
+		<br /> Last Name: <input type=text name="lastName" value="" />
 		<br /> Position: <input type=text name="position" value="" /> <br />
 		Gender: <input type=text name="gender" value="" /> <br /> Date of
 		Birth: <input type=text name="dateOfBirth" value="" /> <br />
@@ -29,6 +33,7 @@
 		Mobile Phone: <input type=text name="mobilePhone" value="" /> <br />
 		Station Number: <input type=text name="stationNumber" value="" /> <br />
 		Active: <input type=text name="isActive" value=""/> (true or false)<br />
+		Email: <input type=text name="email" value=""/>
 		<input type=submit name=submit value="Add the Member" />
 	</form>
 	

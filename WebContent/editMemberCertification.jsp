@@ -12,12 +12,17 @@
 <title>Edit Certification</title>
 </head>
 <body>
-	<!-- temporary nav links that will totally not be here in the final build -->
-	<a href="myProfile.jsp">My Profile</a>
+
+	<br/>
+	<br/>
+	<a href="home.jsp">Home</a>
+	<br/>
+	<br/>
+	<a href="memberInfo.jsp">Member Info</a>
+	<br/>
+	<br/>
+	<a href="reports.jsp">Reports</a>
 	<br />
-	<a href="editMembers.jsp">Edit Members</a>
-	<br />
-	<a href="reports.jsp">Reports [don't click because it makes the server sad]</a>
 	<br />
 
 <form name=editMemberCertification action=editMemberCertification method=get >

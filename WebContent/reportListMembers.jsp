@@ -8,5 +8,17 @@
 </head>
 <body>
 
+		<br/>
+	<br/>
+	<a href="home.jsp">Home</a>
+	<br/>
+	<br/>
+	<a href="memberInfo.jsp">Member Info</a>
+	<br/>
+	<br/>
+	<a href="reports.jsp">Reports</a>
+	<br />
+	<br />
+	
 </body>
 </html>

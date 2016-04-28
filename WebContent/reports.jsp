@@ -7,7 +7,21 @@
 <title>Reports</title>
 </head>
 <body>
+
+	<br/>
+	<br/>
+	<a href="home.jsp">Home</a>
+	<br/>
+	<br/>
+	<a href="memberInfo.jsp">Member Info</a>
+	<br/>
+	<br/>
+	<a href="reports.jsp">Reports</a>
+	<br />
+	<br />
+
 <a href="reportExpiredCert.jsp">People with expired certifications</a>
 <a href="reportListMembers.jsp"> List members by station and radio number, and show email addresses</a>
+
 </body>
 </html>

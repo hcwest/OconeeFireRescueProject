@@ -4,18 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>You have successfully logged in</h1>
-	<br/>
-	<br/>
-	<a href="home.jsp">Home</a>
-	<br/>
-	<br/>
-	<a href="memberInfo.jsp">Member Info</a>
-	<br/>
-	<br/>
-	<a href="reports.jsp">Reports</a>
+	<a href="readMember.jsp">Edit Member Info</a>
+	<a href="readCertifications.jsp">Edit Certification Info</a>
+	<a href="readPersonHasCertification.jsp">Member has EARNED or LOST certification</a>
 </body>
 </html>
