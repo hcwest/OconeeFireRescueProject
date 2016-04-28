@@ -22,7 +22,7 @@ public class Person {
 	}
 
 
-	public Person(int radioNumber, String firstName, String lastName, String position, String gender, String dateOfBirth, String address, String workPhone, String mobilePhone, int stationNumber, String isActive) {
+	public Person(int radioNumber, String firstName, String lastName, String position, String gender, String dateOfBirth, String address, String workPhone, String mobilePhone, int stationNumber, String isActive, String email) {
 		this.radioNumber = radioNumber;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -34,6 +34,7 @@ public class Person {
 		this.mobilePhone = mobilePhone;
 		this.stationNumber = stationNumber;
 		this.isActive = isActive;
+		this.email = email;
 	}
 
 

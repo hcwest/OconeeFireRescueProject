@@ -31,7 +31,7 @@ public class AddQuery {
 	
 	//*****************************************************************************************************************
 	public void doAddPerson(Person person){
-		String query = "insert into person (radioNumber, firstName, lastName, position, gender, dateOfBirth, address, workPhone, mobilePhone, stationNumber, isActive) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+		String query = "insert into person (radioNumber, firstName, lastName, position, gender, dateOfBirth, address, workPhone, mobilePhone, stationNumber, isActive, email) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 				
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
@@ -46,6 +46,7 @@ public class AddQuery {
 			ps.setString(9, person.getMobilePhone());
 			ps.setInt(10, person.getStationNumber());
 			ps.setString(11, person.getActive());
+			ps.setString(12, person.getEmail());
 			
 			ps.executeUpdate();
 			
@@ -74,7 +75,7 @@ public class AddQuery {
 	}
 
 	public void doAddPersonCertifications(PersonCertifications personCertifications){
-		String query = "insert into person_has_certifications (radioNumber, certificationName) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+		String query = "insert into person_has_certifications (radioNumber, certificationName) values (?, ?, ?, )";
 				
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);

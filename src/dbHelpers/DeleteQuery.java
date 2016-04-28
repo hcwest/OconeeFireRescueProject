@@ -47,13 +47,7 @@ public class DeleteQuery {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
-		
-		
-		
-		
+		}	
 	}
 	
 	public void doDeletePersonHasCert(String radioNumber, String certificationName){
@@ -75,8 +69,6 @@ public class DeleteQuery {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 	public void doDeleteCertification(String certificationName){

@@ -57,7 +57,7 @@ public class UpdatePersonHasCertServlet extends HttpServlet {
 		
 		
 		// create an UpdateQuery object and use it to update the book
-		UpdateQuery uq = new UpdateQuery("ofr_model", "root", "password");
+		UpdateQuery uq = new UpdateQuery("ocfr", "root", "0000");
 		uq.doUpdatePersonHasCert(personCertification);
 		
 		// pass control on to the ReadServlet

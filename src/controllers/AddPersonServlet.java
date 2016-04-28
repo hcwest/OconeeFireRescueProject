@@ -50,6 +50,7 @@ public class AddPersonServlet extends HttpServlet {
 		String mobilePhone= request.getParameter("mobilePhone");
 		int stationNumber= Integer.parseInt(request.getParameter("stationNumber"));
 		String isActive = request.getParameter("isActive");
+		String email = request.getParameter("email");
 	    
 		// set up a person object
 	    Person person = new Person();
@@ -64,6 +65,7 @@ public class AddPersonServlet extends HttpServlet {
 		person.setMobilePhone(mobilePhone);
 		person.setStationNumber(stationNumber);
 		person.setActive(isActive);
+		person.setEmail(email);
 	    
 		// set up an addQuery object
 	    AddQuery aq = new AddQuery("ocfr", "root", "0000");

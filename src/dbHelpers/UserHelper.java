@@ -25,7 +25,7 @@ public class UserHelper {
 		try {
 			//Set up connection
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/ofr_model", "root", "password");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/ocfr", "root", "0");
 			
 			//Create the preparedstatement(s)
 			authenticateUserStatement = conn.prepareStatement("select * from user where email=? and password=?");

@@ -37,11 +37,10 @@ public class UpdateQuery {
 	}
 	
 	public void doUpdatePerson(Person person){
-		String query = "update person set firstName=?, lastName=?, position=?, gender=?, dateOfBirth=?, address=?, workPhone=?,mobilePhone?, stationNumber=? isActive=?, email=?, where radioNumber=?";
+		String query = "update person set firstName=?, lastName=?, position=?, gender=?, dateOfBirth=?, address=?, workPhone=?, mobilePhone=?, stationNumber=?, isActive=?, email=? where radioNumber=?";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
-			
 			
 			ps.setString(1, person.getFirstName());
 			ps.setString(2, person.getLastName());
@@ -55,9 +54,6 @@ public class UpdateQuery {
 			ps.setString(10, person.getActive());
 			ps.setString(11, person.getEmail());
 			ps.setInt(12, person.getRadioNumber());
-			
-			
-			
 			
 			ps.executeUpdate();
 			

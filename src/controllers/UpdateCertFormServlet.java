@@ -1,14 +1,19 @@
 package controllers;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.*;
+import dbHelpers.ReadRecordCertifications;
+
 /**
- * Servlet implementation class UpdateCertFormServlet
+ * Servlet implementation class UpdatePersonFormServlet
  */
 @WebServlet("/updateCertForm")
 public class UpdateCertFormServlet extends HttpServlet {
@@ -28,6 +33,7 @@ public class UpdateCertFormServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request,response);
 	}
 
 	/**
@@ -35,7 +41,23 @@ public class UpdateCertFormServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String certificationName = request.getParameter("certificationName");
+
+		// create ReadRecord class
+		ReadRecordCertifications rr = new ReadRecordCertifications("ocfr", "root", "0000", certificationName);
+
+		// Use ReadRecord to get the product data
+		rr.doReadCertification();
+
+		Certifications certification = rr.getCertification();
+
+		// pass Product and control to the updateForm.jsp
+		request.setAttribute("certification", certification);
+
+		String url = "/updateCertification.jsp";
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 	}
 
 }

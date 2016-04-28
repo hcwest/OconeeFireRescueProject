@@ -47,11 +47,11 @@ public class ReadCertServlet extends HttpServlet {
 		
 		// Get the html table from the REadQuery object
 		rq.doReadCertification();
-		String table = rq.getCertificationTable();
+		String certificationTable = rq.getCertificationTable();
 		
 		// pass execution control to read.jsp along with the table
-		request.setAttribute("table", table);
-		String url = "/read.jsp";
+		request.setAttribute("certificationTable", certificationTable);
+		String url = "/readCertifications.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

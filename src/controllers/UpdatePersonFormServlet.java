@@ -1,11 +1,16 @@
 package controllers;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.*;
+import dbHelpers.ReadRecordPerson;
 
 /**
  * Servlet implementation class UpdatePersonFormServlet
@@ -28,6 +33,7 @@ public class UpdatePersonFormServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request,response);
 	}
 
 	/**
@@ -35,7 +41,23 @@ public class UpdatePersonFormServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
+
+		// create ReadRecord class
+		ReadRecordPerson rr = new ReadRecordPerson("ocfr", "root", "0000", radioNumber);
+
+		// Use ReadRecord to get the product data
+		rr.doReadPerson();
+
+		Person person = rr.getPerson();
+
+		// pass Product and control to the updateForm.jsp
+		request.setAttribute("person", person);
+
+		String url = "/updatePerson.jsp";
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 	}
 
 }
