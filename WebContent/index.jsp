@@ -19,11 +19,11 @@
 	
 		<h3>Username</h3>
 		<br />
-		<input type="text" name="email" placeholder="Email" required><br>
+		<input type="text" name="email" placeholder="email" required><br>
 		<br />
 		<h3>Password</h3>
 		<br />
-		<input type="password" name="password" placeholder ="Password" required><br>
+		<input type="password" name="password" placeholder ="password" required><br>
 		<br />
 		
 		<input type="submit" name="btn_Login" value="login">
