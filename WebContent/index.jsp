@@ -28,6 +28,8 @@
 		
 		<input type="submit" name="btn_Login" value="login">
 		
+		<a href="newUser.jsp">CreateNewUser</a>
+		
 		</form>
 	</div>
 </div>

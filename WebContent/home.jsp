@@ -17,5 +17,10 @@
 	<br/>
 	<br/>
 	<a href="reports.jsp">Reports</a>
+	
+	
+	<p>
+		Click <a href="login?logout=true">here</a> to log back out.
+	</p>
 </body>
 </html>

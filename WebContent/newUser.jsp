@@ -7,8 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="readMember.jsp">Edit Member Info</a><br/>
-	<a href="readCertifications.jsp">Edit Certification Info</a><br/>
-	<a href="readPersonHasCertification.jsp">Member has EARNED or LOST certification</a>
+
+<div class="newUser">
+		
+		<form name=newUserForm action=addUser method=get>
+		<h2>Create User Account:</h2>
+		<br /> Email: <input type=text name="email" value="" />
+		<br /> Password: <input type=text name="password" value="" />
+		
+		
+		<input type=submit name=submit value="Create Account" />
+	</form>
+
 </body>
 </html>

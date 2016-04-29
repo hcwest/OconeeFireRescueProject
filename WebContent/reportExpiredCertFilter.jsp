@@ -2,13 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="dbHelpers.*" %>
 <%
-	ReadQuery rq = new ReadQuery("ocfr", "root", "password");
 
-	
-	rq.doExpiredCerts();
-	
-	String expiredCerts = rq.getExpiredCerts();
-	String expiredCertsFilter= rq.getExpiredCertsFilter();
+	String expiredCertsFilter = (String) request.getAttribute("expiredCertsFilter");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -36,7 +31,11 @@
 	<input type=text name=certificationName value="">
 	<input type=submit name=sumbit value="submit">
 </form>
-<%= expiredCerts %>
+<%= expiredCertsFilter %>
+
+<form name=blah action="reportExpiredCert.jsp" method=post>
+	<input type=submit name=submit value="Reset">
+</form>
 
 </body>
 </html>

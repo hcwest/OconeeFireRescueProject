@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="readMember.jsp">Edit Member Info</a><br/>
-	<a href="readCertifications.jsp">Edit Certification Info</a><br/>
-	<a href="readPersonHasCertification.jsp">Member has EARNED or LOST certification</a>
+<h1>Error: Invalid Email or Password</h1>
+<a href="index.jsp">Try Again</a>
+
 </body>
 </html>

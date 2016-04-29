@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
     pageEncoding="US-ASCII"%>
+<%@ page import="dbHelpers.*" %>
 <%
- 	String personHasCertificationTable = (String) request.getAttribute("personHasCertificationTable");
- 	//String test = (String) request.getAttribute("test");
+ 	
+ 	ReadQuery rq = new ReadQuery("ocfr", "root", "password");
+ 	rq.doReadPersonHasCert();
+	String personHasCertificationTable = rq.getPersonHasCertTable();
+	
  %> 
   
   
@@ -28,9 +32,6 @@
 
 <h1>Member with Certification List</h1>
 
-<form name=blahblahtest action=readPersonHasCert method=get >
-	<input type=submit name=submit value="make shit happen" />
-</form>
 <%= personHasCertificationTable %>
 <br />
 <a href="addMember.jsp">Add a Member</a>
