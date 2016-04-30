@@ -39,5 +39,7 @@
 	<p>
 		Click <a href="login?logout=true">here</a> to log back out.
 	</p>
+	
+	<img src="craig.jpg" style="width:304px;height:228px;">
 </body>
 </html>
