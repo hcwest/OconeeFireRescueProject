@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,9 +41,36 @@ public class ReportListMembersServlet extends HttpServlet {
 		// Create a ReadQuery helper object
 				ReadQuery rq = new ReadQuery("ocfr", "root", "password");
 				
+				
+				
 				// Get the html table from the REadQuery object
-				rq.doListMembers();
+			    ResultSet personResults = rq.doListMembers();
 				String memberList = rq.getMemberList();
+				
+			
+				// If the "Export" button was clicked, then export as CSV
+				// otherwise, we'll print HTML as normal.
+				if (null == request.getParameter("export")) {
+					// Do CSV
+					response.setContentType("text/csv");
+					
+					// These next two HTTP headers in the response object
+					// tell the browser to treat the content as a download, 
+					// rather than as something to display.
+					response.setHeader("Content-Description", "File Transfer");
+					response.setHeader("Content-Disposition", "attachment; filename=books.csv");
+					
+					// A CSV output helper method, similar to the one we used for 
+					// the HTML table.
+					memberList = rq.getCSVTable(personResults);
+					
+					// At this point, we could dispatch to a JSP, but
+					// the content we wish to output is already fully generated.
+					// Let's just print it instead, and be done.
+					response.getOutputStream().print(memberList);
+					return;
+				} 
+				
 				
 				// pass execution control to read.jsp along with the table
 				request.setAttribute("memberList", memberList);
