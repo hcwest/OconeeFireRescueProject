@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<title> lists members by station and radio number, and shows email addresses. This report shall be able to be exported to a CSV file</title>
+<title> lists members </title>
 </head>
 <body>
 
@@ -44,8 +44,9 @@
     
 	<%= memberList %>
 	</div>
-	
-	<a href=blahblah>Export to .csv file</a>
+	<form method="GET" action="reportListMembers">
+	<input type="submit" name="output" value="Export to .csv">
+</form>
 	
 	
 </body>
