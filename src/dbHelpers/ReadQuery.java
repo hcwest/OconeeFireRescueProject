@@ -80,7 +80,7 @@ public class ReadQuery {
 		}
 	}
 	
-	public void doListMembers(){
+	public ResultSet doListMembers(){
 		String query = "select firstName, lastName, radioNumber, stationNumber, email FROM person"; //**********************************************************
 		
 		try {
@@ -90,6 +90,7 @@ public class ReadQuery {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return personResults;
 	}
 	
 	public void doExpiredCerts(){
@@ -125,42 +126,42 @@ public class ReadQuery {
 		personTable += "<table border=1>";
 		
 		personTable +="<tr>";
-		personTable +="<th>";
+		personTable +="<td>";
 		personTable +="Radio Number";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="First Name";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Last Name";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Position";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Gender";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Date Of Birth";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Address";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Work Phone";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Mobile Phone";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Station Number";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Email";
-		personTable +="</th>";
-		personTable +="<th>";
+		personTable +="</td>";
+		personTable +="<td>";
 		personTable +="Edit";
-		personTable +="</th>";
+		personTable +="</td>";
 		personTable +="</tr>";
 		
 		try {
@@ -232,24 +233,24 @@ public class ReadQuery {
 		personHasCertificationTable += "<table border=1>";
 		
 		personHasCertificationTable +="<tr>";
-		personHasCertificationTable +="<th>";
+		personHasCertificationTable +="<td>";
 		personHasCertificationTable +="Radio Number";
-		personHasCertificationTable +="</th>";
-		personHasCertificationTable +="<th>";
+		personHasCertificationTable +="</td>";
+		personHasCertificationTable +="<td>";
 		personHasCertificationTable +="Certification Name";
-		personHasCertificationTable +="</th>";
-		personHasCertificationTable +="<th>";
+		personHasCertificationTable +="</td>";
+		personHasCertificationTable +="<td>";
 		personHasCertificationTable +="Expired?";
-		personHasCertificationTable +="</th>";
-		personHasCertificationTable +="<th>";
+		personHasCertificationTable +="</td>";
+		personHasCertificationTable +="<td>";
 		personHasCertificationTable +="Date Earned";
-		personHasCertificationTable +="</th>";
-		personHasCertificationTable +="<th>";
+		personHasCertificationTable +="</td>";
+		personHasCertificationTable +="<td>";
 		personHasCertificationTable +="Renewal Date";
-		personHasCertificationTable +="</th>";
-		personHasCertificationTable +="<th>";
+		personHasCertificationTable +="</td>";
+		personHasCertificationTable +="<td>";
 		personHasCertificationTable +="Edit";
-		personHasCertificationTable +="</th>";
+		personHasCertificationTable +="</td>";
 		personHasCertificationTable +="</tr>";
 		
 		try {
@@ -297,18 +298,18 @@ public class ReadQuery {
 		certificationTable += "<table border=1>";
 		
 		certificationTable +="<tr>";
-		certificationTable +="<th>";
+		certificationTable +="<td>";
 		certificationTable +="Certification Name";
-		certificationTable +="</th>";
-		certificationTable +="<th>";
+		certificationTable +="</td>";
+		certificationTable +="<td>";
 		certificationTable +="Expiration Period";
-		certificationTable +="</th>";
-		certificationTable +="<th>";
+		certificationTable +="</td>";
+		certificationTable +="<td>";
 		certificationTable +="Certifying Agency";
-		certificationTable +="</th>";
-		certificationTable +="<th>";
+		certificationTable +="</td>";
+		certificationTable +="<td>";
 		certificationTable +="Edit";
-		certificationTable +="</th>";
+		certificationTable +="</td>";
 		certificationTable +="</tr>";
 		
 		try {
@@ -351,21 +352,21 @@ public class ReadQuery {
 		memberList += "<table border=1>";
 		
 		memberList +="<tr>";
-		memberList +="<th>";
+		memberList +="<td>";
 		memberList +="First Name";
-		memberList +="</th>";
-		memberList +="<th>";
+		memberList +="</td>";
+		memberList +="<td>";
 		memberList +="Last Name";
-		memberList +="</th>";
-		memberList +="<th>";
+		memberList +="</td>";
+		memberList +="<td>";
 		memberList +="Radio Number";
-		memberList +="</th>";
-		memberList +="<th>";
+		memberList +="</td>";
+		memberList +="<td>";
 		memberList +="Station Number";
-		memberList +="</th>";
-		memberList +="<th>";
+		memberList +="</td>";
+		memberList +="<td>";
 		memberList +="Email";
-		memberList +="</th>";
+		memberList +="</td>";
 		memberList +="</tr>";		
 		
 		try {
@@ -411,18 +412,18 @@ public class ReadQuery {
 		expiredCerts += "<table border=1>";
 		
 		expiredCerts +="<tr>";
-		expiredCerts +="<th>";
+		expiredCerts +="<td>";
 		expiredCerts +="First Name";
-		expiredCerts +="</th>";
-		expiredCerts +="<th>";
+		expiredCerts +="</td>";
+		expiredCerts +="<td>";
 		expiredCerts +="Last Name";
-		expiredCerts +="</th>";
-		expiredCerts +="<th>";
+		expiredCerts +="</td>";
+		expiredCerts +="<td>";
 		expiredCerts +="Certification Name";
-		expiredCerts +="</th>";
-		expiredCerts +="<th>";
+		expiredCerts +="</td>";
+		expiredCerts +="<td>";
 		expiredCerts +="Expired?";
-		expiredCerts +="</th>";
+		expiredCerts +="</td>";
 		expiredCerts +="</tr>";		
 		
 		try {
@@ -467,18 +468,18 @@ public class ReadQuery {
 		expiredCertsFilter += "<table border=1>";
 		
 		expiredCertsFilter +="<tr>";
-		expiredCertsFilter +="<th>";
+		expiredCertsFilter +="<td>";
 		expiredCertsFilter +="First Name";
-		expiredCertsFilter +="</th>";
-		expiredCertsFilter +="<th>";
+		expiredCertsFilter +="</td>";
+		expiredCertsFilter +="<td>";
 		expiredCertsFilter +="Last Name";
-		expiredCertsFilter +="</th>";
-		expiredCertsFilter +="<th>";
+		expiredCertsFilter +="</td>";
+		expiredCertsFilter +="<td>";
 		expiredCertsFilter +="Certification Name";
-		expiredCertsFilter +="</th>";
-		expiredCertsFilter +="<th>";
+		expiredCertsFilter +="</td>";
+		expiredCertsFilter +="<td>";
 		expiredCertsFilter +="Expired?";
-		expiredCertsFilter +="</th>";
+		expiredCertsFilter +="</td>";
 		expiredCertsFilter +="</tr>";		
 		
 		try {
@@ -515,6 +516,53 @@ public class ReadQuery {
 		expiredCertsFilter += "</table>";
 		return expiredCertsFilter;
 //		return test;
+	}
+	
+	public String getCSVTable(ResultSet personResults){
+		String memberList ="";
+		
+		try {
+			while(personResults.next()) {
+
+				Person person = new Person(
+						personResults.getInt("radioNumber"),
+						personResults.getString("firstName"),
+						personResults.getString("lastName"),
+						personResults.getInt("stationNumber"),
+						personResults.getString("email")
+						);
+				
+				// Because we can't put the " character easily inside a 
+				// String, we "escape" it by using a backslash sequence.
+				// The \" sequence is resolved by Java to mean the " character
+				
+				// The CSV format wraps strings in double quotes.
+				// Any double quotes already part of the string need to be
+				// doubled up according to the CSV specification.
+				// Thus, " turns in to "" in CSV to indicate the field contains
+				// a double quote character.
+
+				memberList += "\"";
+				memberList += person.getFirstName().replaceAll("\"", "\"\"");
+				memberList +="\", \"";
+				memberList += person.getLastName().replaceAll("\"", "\"\"");
+				memberList +="\",";
+				memberList += person.getRadioNumber();
+				memberList +="\",";
+				memberList += person.getStationNumber();
+				memberList +="\", \"";
+				memberList += person.getEmail().replaceAll("\"", "\"\"");
+				memberList +="\",";
+				memberList +="\n";  // Important!
+
+				// Just as \" is resolved as a " character, \n resolves
+				// as a new line. Each record in a CSV file is a new line.
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return memberList;
 	}
 
 
