@@ -43,10 +43,9 @@ public class ReportListMembersServlet extends HttpServlet {
 				
 				
 				
-				// Get t he html table from the REadQuery object
+				// Get the html table from the REadQuery object
 			    ResultSet personResults = rq.doListMembers();
-				String memberList = rq.getMemberList();
-				
+				String memberList;
 			
 				// If the "Export" button was clicked, then export as CSV
 				// otherwise, we'll print HTML as normal.
@@ -58,7 +57,7 @@ public class ReportListMembersServlet extends HttpServlet {
 					// tell the browser to treat the content as a download, 
 					// rather than as something to display.
 					response.setHeader("Content-Description", "File Transfer");
-					response.setHeader("Content-Disposition", "attachment; filename=books.csv");
+					response.setHeader("Content-Disposition", "attachment; filename=members.csv");
 					
 					// A CSV output helper method, similar to the one we used for 
 					// the HTML table.
@@ -70,7 +69,7 @@ public class ReportListMembersServlet extends HttpServlet {
 					response.getOutputStream().print(memberList);
 					return;
 				} 
-				
+				memberList = rq.getMemberList();
 				
 				// pass execution control to read.jsp along with the table
 				request.setAttribute("memberList", memberList);
