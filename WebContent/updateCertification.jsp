@@ -39,7 +39,7 @@
   </ul>
 </div>
 
-<form name=updateForm action=updateCert method=get >	
+<form name=updateCertForm action=updateCert method=get >	
 	<label> Certification Name: </label>
 	<input type=text name=certificationName value="<%= certification.getCertificationName() %>" />
 	<br />

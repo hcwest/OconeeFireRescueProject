@@ -3,7 +3,7 @@
 <%@ page import="dbHelpers.*" %>
  <%
  	
- 	ReadQuery rq = new ReadQuery("OFR_Model", "root", "michael");
+ 	ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
  	rq.doReadCertification();
 	String certificationTable = rq.getCertificationTable();
  %>

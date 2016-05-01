@@ -2,8 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="dbHelpers.*" %>
 <%
-	ReadQuery rq = new ReadQuery("ocfr", "root", "password");
-
+	ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
 	
 	rq.doExpiredCerts();
 	

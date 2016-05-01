@@ -3,10 +3,9 @@
     <%@ page import="dbHelpers.*" %>
 <%
   
-	ReadQuery rq = new ReadQuery("ocfr", "root", "password");
+	ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
 	rq.doListMembers();
 	String memberList = rq.getMemberList();
-
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -44,7 +43,7 @@
     
 	<%= memberList %>
 	</div>
-	<form method="GET" action="reportListMembers">
+<form method="GET" action="reportListMembers">
 	<input type="submit" name="output" value="Export to .csv">
 </form>
 	

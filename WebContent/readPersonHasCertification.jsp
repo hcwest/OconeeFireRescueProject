@@ -3,7 +3,7 @@
 <%@ page import="dbHelpers.*" %>
 <%
  	
- 	ReadQuery rq = new ReadQuery("OFR_Model", "root", "michael");
+ 	ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
  	rq.doReadPersonHasCert();
 	String personHasCertificationTable = rq.getPersonHasCertTable();
 	
@@ -47,7 +47,7 @@
 
 <%= personHasCertificationTable %>
 <br />
-<a href="addMember.jsp">Add a Member</a>
+<a href="addMemberCertification.jsp">Add a new certification for a person</a>
 
 </body>
 </html>

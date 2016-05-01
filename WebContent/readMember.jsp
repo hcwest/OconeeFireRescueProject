@@ -5,7 +5,7 @@
  <%
  	
  	
- 	ReadQuery rq = new ReadQuery("OFR_Model", "root", "michael");
+ 	ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
  	rq.doReadPerson();
 	String personTable = rq.getPersonTable();
 	

@@ -34,13 +34,13 @@
   </ul>
 </div>
 	
-	<form name=addForm action=addMemberCertification method=get>
+	<form name=addForm action=addPersonCertification method=get>
 		<h2>New Member Certification Information:</h2>
 		<br /> Radio Number: <input type=text name="radioNumber" value="" />
 		<br /> Certification Name: <input type=text name="certificationName" value="" />
 		<br /> Is Expired: <input type=text name="isExpired" value="" />
 		<br /> Earned Date: <input type=text name="earnedDate" value="" />
-		<br /> Renewed Date: <input type=text name="renewedDate" value="" />
+		<br /> Renewal Date: <input type=text name="renewalDate" value="" />
 		
 		
 		<input type=submit name=submit value="Add the Member's Certification" />
