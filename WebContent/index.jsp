@@ -15,7 +15,7 @@
 	</div>
 	
 	<div class="login-form">
-		<form name=loginForm action="login" method=post >
+	<form name=loginForm action="validate" method=get >
 	
 		<h3>Username</h3>
 		<br />
