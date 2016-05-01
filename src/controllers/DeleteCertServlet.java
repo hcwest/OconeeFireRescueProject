@@ -41,7 +41,7 @@ public class DeleteCertServlet extends HttpServlet {
 		String certificationName = request.getParameter("certificationName");
 		
 		// create a deleteQuery object
-		DeleteQuery dq = new DeleteQuery("ocfr", "root", "password");
+		DeleteQuery dq = new DeleteQuery("ocfr", "root", "0000");
 		
 		// use deleteQuery to delete the record
 		dq.doDeleteCertification(certificationName);

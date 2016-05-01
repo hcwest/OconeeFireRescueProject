@@ -44,7 +44,7 @@ public class UpdateCertFormServlet extends HttpServlet {
 		String certificationName = request.getParameter("certificationName");
 
 		// create ReadRecord class
-		ReadRecordCertifications rr = new ReadRecordCertifications("ocfr", "root", "password", certificationName);
+		ReadRecordCertifications rr = new ReadRecordCertifications("ocfr", "root", "0000", certificationName);
 
 		// Use ReadRecord to get the product data
 		rr.doReadCertification();

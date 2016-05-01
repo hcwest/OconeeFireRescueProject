@@ -45,7 +45,7 @@ public class UpdatePersonHasCertFormServlet extends HttpServlet {
 		String certificationName = request.getParameter("certificationName");
 
 		// create ReadRecord class
-		ReadRecordPersonHasCertifications rr = new ReadRecordPersonHasCertifications("ocfr", "root", "password", radioNumber, certificationName);
+		ReadRecordPersonHasCertifications rr = new ReadRecordPersonHasCertifications("ocfr", "root", "0000", radioNumber, certificationName);
 
 		// Use ReadRecord to get the product data
 		rr.doReadPersonHasCertification();
@@ -55,7 +55,7 @@ public class UpdatePersonHasCertFormServlet extends HttpServlet {
 		// pass Product and control to the updateForm.jsp
 		request.setAttribute("personCertification", personCertification);
 
-		String url = "/updatePersonHsCertifications.jsp";
+		String url = "/updatePersonHasCertifications.jsp";
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

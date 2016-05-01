@@ -41,14 +41,20 @@ public class AddPersonCertificationServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 		String certificationName = request.getParameter("certificationName");
+		String isExpired = request.getParameter("isExpired");
+		String earnedDate = request.getParameter("earnedDate");
+		String renewalDate = request.getParameter("renewalDate");
 		
 		// set up a certifications object
 	    PersonCertifications personCertification = new PersonCertifications();
 	    personCertification.setRadioNumber(radioNumber);
 	    personCertification.setCertificationName(certificationName);
+	    personCertification.setIsExpired(isExpired);
+	    personCertification.setEarnedDate(earnedDate);
+	    personCertification.setRenewalDate(renewalDate);
 	    
 		// set up an addQuery object
-	    AddQuery aq = new AddQuery("ocfr", "root", "password");
+	    AddQuery aq = new AddQuery("ocfr", "root", "0000");
 	    
 		// pass the product to addQuery to add to the database
 	    aq.doAddPersonCertifications(personCertification);

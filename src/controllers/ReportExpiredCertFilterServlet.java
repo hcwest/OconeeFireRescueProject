@@ -38,7 +38,7 @@ public class ReportExpiredCertFilterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Create a ReadQuery helper object
-		ReadQuery rq = new ReadQuery("ocfr", "root", "password");
+		ReadQuery rq = new ReadQuery("ocfr", "root", "0000");
 		
 		String certificationName = request.getParameter("certificationName");
 		// Get the html table from the REadQuery object

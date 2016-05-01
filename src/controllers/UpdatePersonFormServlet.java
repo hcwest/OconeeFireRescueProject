@@ -44,7 +44,7 @@ public class UpdatePersonFormServlet extends HttpServlet {
 		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 
 		// create ReadRecord class
-		ReadRecordPerson rr = new ReadRecordPerson("ocfr", "root", "password", radioNumber);
+		ReadRecordPerson rr = new ReadRecordPerson("ocfr", "root", "0000", radioNumber);
 
 		// Use ReadRecord to get the product data
 		rr.doReadPerson();
@@ -53,7 +53,7 @@ public class UpdatePersonFormServlet extends HttpServlet {
 
 		// pass Product and control to the updateForm.jsp
 		request.setAttribute("person", person);
-
+		
 		String url = "/updatePerson.jsp";
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

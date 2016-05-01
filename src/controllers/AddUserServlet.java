@@ -55,7 +55,7 @@ public class AddUserServlet extends HttpServlet {
 	   
 	    
 		// set up an addQuery object
-	    AddQuery aq = new AddQuery("ocfr", "root", "password");
+	    AddQuery aq = new AddQuery("ocfr", "root", "0000");
 	    
 		// pass the product to addQuery to add to the database
 	    aq.doAddUser(user);
