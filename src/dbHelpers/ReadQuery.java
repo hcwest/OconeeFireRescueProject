@@ -332,7 +332,7 @@ public class ReadQuery {
 				certificationTable += certification.getCertifyingAgency();
 				certificationTable +="</td>";
 				certificationTable +="<td>";
-				   certificationTable += "<a href=updateCertForm?radioNumber=" + certification.getCertificationName() + " >update</a> <a href=deleteCert?radioNumber=" + certification.getCertificationName() + " >delete</a>";
+				   certificationTable += "<a href=updateCertForm?certificationName=" + certification.getCertificationName() + " >update</a> <a href=deleteCert?certificationName=" + certification.getCertificationName() + " >delete</a>";
 				certificationTable +="</td>";
 				certificationTable +="</tr>";
 				

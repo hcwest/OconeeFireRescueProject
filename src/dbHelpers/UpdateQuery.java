@@ -91,7 +91,7 @@ public class UpdateQuery {
 	}
 	
 	public void doUpdateCertification(Certifications certification){
-		String query = "update certification set expirationPeriod=?, certifyingAgency=? where certificationName=?";
+		String query = "update certifications set expirationPeriod=?, certifyingAgency=? where certificationName=?";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
@@ -100,10 +100,6 @@ public class UpdateQuery {
 			ps.setString(2, certification.getCertifyingAgency());
 			ps.setString(3, certification.getCertificationName());
 		
-			
-			
-			
-			
 			
 			ps.executeUpdate();
 			

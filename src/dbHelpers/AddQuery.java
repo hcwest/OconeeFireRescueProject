@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import model.Person;
 import model.Certifications;
 import model.PersonCertifications;
+import model.User;
 
 public class AddQuery {
 	
@@ -75,12 +76,15 @@ public class AddQuery {
 	}
 
 	public void doAddPersonCertifications(PersonCertifications personCertifications){
-		String query = "insert into person_has_certifications (radioNumber, certificationName) values (?, ?, ?, )";
+		String query = "insert into person_has_certifications (radioNumber, certificationName, isExpired, earnedDate, renewalDate) values (?, ?, ?, ?, ?)";
 				
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
 			ps.setInt(1, personCertifications.getRadioNumber());
 			ps.setString(2, personCertifications.getCertificationName());
+			ps.setString(3, personCertifications.getIsExpired());
+			ps.setString(4, personCertifications.getEarnedDate());
+			ps.setString(5, personCertifications.getRenewalDate());
 			
 			ps.executeUpdate();
 			
@@ -88,6 +92,11 @@ public class AddQuery {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+
+	public void doAddUser(User user) {
+		// TODO Auto-generated method stub
 		
 	}
 
