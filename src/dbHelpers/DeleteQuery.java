@@ -50,22 +50,20 @@ public class DeleteQuery {
 		}	
 	}
 	
-	public void doDeletePersonHasCert(String radioNumber, String certificationName){
+	public void doDeletePersonHasCert(int id){
 		// set up a String to hold our query
-		String query1 = "delete from person_has_certifications where radioNumber = ? and certificationName = ?";
-//		String query2 ="delete from person_has_certifications where certificationName = ?";
+		String query = "delete from person_has_certifications where id = ?";
+		
 		// create a preparedstatement using our query string
 		try {
-			PreparedStatement ps1 = connection.prepareStatement(query1);
-//			PreparedStatement ps2 = connection.prepareStatement(query2);
+			PreparedStatement ps = connection.prepareStatement(query);
 			
 			// fill in the preparedstatement
-			ps1.setString(1, radioNumber);
+			ps.setInt(1, id);
 			
-//			ps2.setString(1, certificationName);
 			
-			ps1.executeUpdate();
-//			ps2.executeUpdate();
+			// execute the query
+			ps.executeUpdate();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
