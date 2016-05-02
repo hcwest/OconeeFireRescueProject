@@ -36,6 +36,7 @@
 	
 	<form name=addForm action=addPersonCertification method=get>
 		<h2>New Member Certification Information:</h2>
+		<br /> ID: <input type=text name="id" value="" />
 		<br /> Radio Number: <input type=text name="radioNumber" value="" />
 		<br /> Certification Name: <input type=text name="certificationName" value="" />
 		<br /> Is Expired: <input type=text name="isExpired" value="" />

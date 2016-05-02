@@ -41,6 +41,11 @@
 
 <form name=editMemberCertification action=editMemberCertification method=get >
 
+	<label>
+      ID:
+   </label>
+   <input type=text name=id value="<%= personCertification.getid() %>" />
+   <br />
 
 	<label>
       Radio Number:
