@@ -44,6 +44,9 @@
 	<label> Radio Number: </label>
 	<input type=text name=radioNumber value="<%= personCertification.getRadioNumber() %>" />
 	<br />
+	<label> ID: </label>
+	<input type=text name=id value="<%= personCertification.getid() %>" />
+	<br />
 	<label> Certification Name: </label>
 	<input type=text name=certificationName value="<%= personCertification.getCertificationName() %>" />
 	<br />
