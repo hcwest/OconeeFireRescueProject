@@ -38,14 +38,14 @@ public class DeletePersonHasCertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the persons radio number
-		String radioNumber = request.getParameter("radioNumber");
-		String certificationName = request.getParameter("certificationName");
+		int id = Integer.parseInt(request.getParameter("id"));
+		
 		
 		// create a deleteQuery object
-		DeleteQuery dq = new DeleteQuery("ocfr", "root", "0000");
+		DeleteQuery dq = new DeleteQuery("ocfr", "root", "password");
 		
 		// use deleteQuery to delete the record
-		dq.doDeletePersonHasCert(radioNumber, certificationName);
+		dq.doDeletePersonHasCert(id);
 		
 		// pass execution on to the ReadServlet
 		String url = "/readPersonHasCert";
