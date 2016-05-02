@@ -57,7 +57,7 @@ public class ReadQuery {
 	}
 	
 	public void doReadPersonHasCert(){
-		String query = "select * from person_has_certifications"; //**********************************************************
+		String query = "select id, radioNumber, certificationName, isExpired, earnedDate, renewalDate from person_has_certifications"; //**********************************************************
 		
 		try {
 			PreparedStatement ps = this.connection.prepareStatement(query);
@@ -234,6 +234,9 @@ public class ReadQuery {
 		
 		personHasCertificationTable +="<tr>";
 		personHasCertificationTable +="<td>";
+		personHasCertificationTable +="ID";
+		personHasCertificationTable +="</td>";
+		personHasCertificationTable +="<td>";
 		personHasCertificationTable +="Radio Number";
 		personHasCertificationTable +="</td>";
 		personHasCertificationTable +="<td>";
@@ -256,6 +259,7 @@ public class ReadQuery {
 		try {
 			while(this.personHasCertificationResults.next()){
 				PersonCertifications personCertification = new PersonCertifications();
+				personCertification.setid(this.personHasCertificationResults.getInt("id"));
 				personCertification.setRadioNumber(this.personHasCertificationResults.getInt("radioNumber"));
 				personCertification.setCertificationName(this.personHasCertificationResults.getString("certificationName"));
 				personCertification.setIsExpired(this.personHasCertificationResults.getString("isExpired"));
@@ -263,6 +267,9 @@ public class ReadQuery {
 				personCertification.setRenewalDate(this.personHasCertificationResults.getString("renewalDate"));
 				
 				personHasCertificationTable +="<tr>";
+				personHasCertificationTable +="<td>";
+				personHasCertificationTable += personCertification.getid();
+				personHasCertificationTable +="</td>";
 				personHasCertificationTable +="<td>";
 				personHasCertificationTable += personCertification.getRadioNumber();
 				personHasCertificationTable +="</td>";
@@ -279,7 +286,7 @@ public class ReadQuery {
 				personHasCertificationTable += personCertification.getRenewalDate();
 				personHasCertificationTable +="</td>";
 				personHasCertificationTable +="<td>";
-				   personHasCertificationTable += "<a href=updatePersonHasCertForm?radioNumber=" + personCertification.getRadioNumber() + " , certificationName=" + personCertification.getCertificationName() + " >update</a> <a href=deletePersonHasCert?radioNumber=" + personCertification.getRadioNumber() + " , certificationName=" + personCertification.getCertificationName() + " >delete</a>";
+				   personHasCertificationTable += "<a href=updatePersonHasCertForm?id=" + personCertification.getid() + " >update</a> <a href=deletePersonHasCert?id=" + personCertification.getid() + " >delete</a>";
 				personHasCertificationTable +="</td>";
 				personHasCertificationTable +="</tr>";
 				
@@ -332,7 +339,7 @@ public class ReadQuery {
 				certificationTable += certification.getCertifyingAgency();
 				certificationTable +="</td>";
 				certificationTable +="<td>";
-				   certificationTable += "<a href=updateCertForm?certificationName=" + certification.getCertificationName() + " >update</a> <a href=deleteCert?certificationName=" + certification.getCertificationName() + " >delete</a>";
+				   certificationTable += "<a href=updateCertForm?radioNumber=" + certification.getCertificationName() + " >update</a> <a href=deleteCert?radioNumber=" + certification.getCertificationName() + " >delete</a>";
 				certificationTable +="</td>";
 				certificationTable +="</tr>";
 				
