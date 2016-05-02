@@ -15,17 +15,17 @@ import model.PersonCertifications;
 public class ReadRecordPersonHasCertifications {
 	
 	private Connection connection;
-	private ResultSet results;
+	private ResultSet personHasCertificationResults;
 	
 	private PersonCertifications personCertification = new PersonCertifications();
-	private int radioNumber;
-	private String certificationName;
+	private int id;
 	
-	public ReadRecordPersonHasCertifications(String dbName, String uname, String pwd, int radioNumber, String certificationName){
+	
+	public ReadRecordPersonHasCertifications(String dbName, String uname, String pwd, int id){
 		
 		String url = "jdbc:mysql://localhost:3306/" + dbName;
-		this.radioNumber = radioNumber;
-		this.certificationName = certificationName;
+		this.id = id;
+		
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -40,23 +40,24 @@ public class ReadRecordPersonHasCertifications {
 	}
 	
 	public void doReadPersonHasCertification(){
-		String query = "select * from person_has_certifications where radioNumber = ?, certificationName = ?";
+		String query = "select * from person_has_certifications where id=?";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
 			
-			ps.setInt(1, this.radioNumber);
-			ps.setString(2, this.certificationName);
+			ps.setInt(1, this.id);
+		
 			
-			this.results = ps.executeQuery();
+			this.personHasCertificationResults = ps.executeQuery();
 			
-			this.results.next();
+			this.personHasCertificationResults.next();
 			
-			personCertification.setRadioNumber(this.radioNumber);
-			personCertification.setCertificationName(this.results.getString("certificationName"));
-			personCertification.setIsExpired(this.results.getString("isExpired"));
-			personCertification.setEarnedDate(this.results.getString("earnedDate"));
-			personCertification.setRenewalDate(this.results.getString("renewalDate"));
+			personCertification.setid(this.id);
+			personCertification.setRadioNumber(this.personHasCertificationResults.getInt("radioNumber"));
+			personCertification.setCertificationName(this.personHasCertificationResults.getString("certificationName"));
+			personCertification.setIsExpired(this.personHasCertificationResults.getString("isExpired"));
+			personCertification.setEarnedDate(this.personHasCertificationResults.getString("earnedDate"));
+			personCertification.setRenewalDate(this.personHasCertificationResults.getString("renewalDate"));
 			
 			
 		} catch (SQLException e) {
