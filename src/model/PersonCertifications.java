@@ -6,19 +6,29 @@ public class PersonCertifications {
 	private String isExpired;
 	private String earnedDate;
 	private String renewalDate;
+	private int id;
 	
 	
 	public PersonCertifications() {
 		
 	}
 	
-	public PersonCertifications(int radioNumber, String certificationName, String isExpired, String earnedDate,
+	public PersonCertifications(int id, int radioNumber, String certificationName, String isExpired, String earnedDate,
 			String renewalDate) {
+	this.id = id;
 	this.radioNumber = radioNumber;
 	this.certificationName = certificationName;
 	this.isExpired = isExpired;
 	this.earnedDate = earnedDate;
 	this.renewalDate = renewalDate;
+	}
+	
+	public int getid() {
+		return id;
+	}
+
+	public void setid(int id) {
+		this.id = id;
 	}
 
 	public int getRadioNumber() {
@@ -63,7 +73,7 @@ public class PersonCertifications {
 
 	@Override
 	public String toString() {
-		return "PersonCertifications [radioNumber=" + radioNumber + ", certificationName=" + certificationName
+		return "PersonCertifications [id="+ id + ", radioNumber=" + radioNumber + ", certificationName=" + certificationName
 				+ ", isExpired=" + isExpired + ", earnedDate=" + earnedDate + ", renewalDate=" + renewalDate + "]";
 	}
 	
