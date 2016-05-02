@@ -39,6 +39,7 @@ public class AddPersonCertificationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		int id = Integer.parseInt(request.getParameter("id"));
 		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 		String certificationName = request.getParameter("certificationName");
 		String isExpired = request.getParameter("isExpired");
@@ -47,6 +48,7 @@ public class AddPersonCertificationServlet extends HttpServlet {
 		
 		// set up a certifications object
 	    PersonCertifications personCertification = new PersonCertifications();
+	    personCertification.setid(id);
 	    personCertification.setRadioNumber(radioNumber);
 	    personCertification.setCertificationName(certificationName);
 	    personCertification.setIsExpired(isExpired);
