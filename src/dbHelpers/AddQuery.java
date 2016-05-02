@@ -76,15 +76,16 @@ public class AddQuery {
 	}
 
 	public void doAddPersonCertifications(PersonCertifications personCertifications){
-		String query = "insert into person_has_certifications (radioNumber, certificationName, isExpired, earnedDate, renewalDate) values (?, ?, ?, ?, ?)";
+		String query = "insert into person_has_certifications (id, radioNumber, certificationName, isExpired, earnedDate, renewalDate) values (?, ?, ?, ?, ?, ?)";
 				
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
-			ps.setInt(1, personCertifications.getRadioNumber());
-			ps.setString(2, personCertifications.getCertificationName());
-			ps.setString(3, personCertifications.getIsExpired());
-			ps.setString(4, personCertifications.getEarnedDate());
-			ps.setString(5, personCertifications.getRenewalDate());
+			ps.setInt(1,personCertifications.getid());
+			ps.setInt(2, personCertifications.getRadioNumber());
+			ps.setString(3, personCertifications.getCertificationName());
+			ps.setString(4, personCertifications.getIsExpired());
+			ps.setString(5, personCertifications.getEarnedDate());
+			ps.setString(6, personCertifications.getRenewalDate());
 			
 			ps.executeUpdate();
 			
