@@ -45,7 +45,7 @@ public class UpdatePersonHasCertFormServlet extends HttpServlet {
 		
 
 		// create ReadRecord class
-		ReadRecordPersonHasCertifications rr = new ReadRecordPersonHasCertifications("ocfr", "root", "password", id);
+		ReadRecordPersonHasCertifications rr = new ReadRecordPersonHasCertifications("ocfr", "root", "0000", id);
 
 		// Use ReadRecord to get the product data
 		rr.doReadPersonHasCertification();
