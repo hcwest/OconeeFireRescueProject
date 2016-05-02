@@ -6,6 +6,7 @@ package dbHelpers;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Person;
@@ -19,6 +20,7 @@ import model.Certifications;
 public class UpdateQuery {
 	
 	private Connection connection;
+	
 	
 	public UpdateQuery(String dbName, String uname, String pwd){
 		
@@ -65,17 +67,19 @@ public class UpdateQuery {
 	}
 	
 	public void doUpdatePersonHasCert(PersonCertifications personCertification){
-		String query = "update person_has_certification set certificationName=?, isExpired=?, earnedDate=?, renewalDate=?, where radioNumber=?";
+		String query = "update person_has_certifications set radioNumber=?, certificationName=?, isExpired=?, earnedDate=?, renewalDate=? where id=?";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
 			
 			
-			ps.setString(1, personCertification.getCertificationName());
-			ps.setString(2, personCertification.getIsExpired());
-			ps.setString(3, personCertification.getEarnedDate());
-			ps.setString(4, personCertification.getRenewalDate());
-			ps.setInt(5, personCertification.getRadioNumber());
+			ps.setInt(1, personCertification.getRadioNumber());
+			ps.setString(2, personCertification.getCertificationName());
+			ps.setString(3, personCertification.getIsExpired());
+			ps.setString(4, personCertification.getEarnedDate());
+			ps.setString(5, personCertification.getRenewalDate());
+			ps.setInt(6, personCertification.getid());
+			
 			
 			
 			
