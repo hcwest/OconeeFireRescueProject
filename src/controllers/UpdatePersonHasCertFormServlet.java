@@ -41,11 +41,11 @@ public class UpdatePersonHasCertFormServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
-		String certificationName = request.getParameter("certificationName");
+		int id = Integer.parseInt(request.getParameter("id"));
+		
 
 		// create ReadRecord class
-		ReadRecordPersonHasCertifications rr = new ReadRecordPersonHasCertifications("ocfr", "root", "0000", radioNumber, certificationName);
+		ReadRecordPersonHasCertifications rr = new ReadRecordPersonHasCertifications("ocfr", "root", "password", id);
 
 		// Use ReadRecord to get the product data
 		rr.doReadPersonHasCertification();
