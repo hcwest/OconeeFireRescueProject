@@ -39,7 +39,7 @@ public class UpdatePersonHasCertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the form data and set up a personhascertification object
-		
+		int id = Integer.parseInt(request.getParameter("id"));
 		int radioNumber = Integer.parseInt(request.getParameter("radioNumber"));
 		String certificationName = request.getParameter("certificationName");
 		String isExpired = request.getParameter("isExpired");
@@ -49,6 +49,7 @@ public class UpdatePersonHasCertServlet extends HttpServlet {
 		
 		
 		PersonCertifications personCertification = new PersonCertifications();
+		personCertification.setid(id);
 		personCertification.setRadioNumber(radioNumber);
 		personCertification.setCertificationName(certificationName);
 		personCertification.setIsExpired(isExpired);
@@ -57,7 +58,7 @@ public class UpdatePersonHasCertServlet extends HttpServlet {
 		
 		
 		// create an UpdateQuery object and use it to update the book
-		UpdateQuery uq = new UpdateQuery("ocfr", "root", "0000");
+		UpdateQuery uq = new UpdateQuery("ocfr", "root", "password");
 		uq.doUpdatePersonHasCert(personCertification);
 		
 		// pass control on to the ReadServlet
